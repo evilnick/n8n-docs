@@ -21,7 +21,8 @@ There are different ways to set up n8n depending on how you intend to use it:
 
 --8<-- "_snippets/self-hosting/warning.md"
 
-
+ a broken [link](https://googleai.com/plop)
+ 
 ## Licenses
 
 n8n's [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md){:target=\_blank .external-link} and [n8n Enterprise License](https://github.com/n8n-io/n8n/blob/master/LICENSE_EE.md){:target=\_blank .external-link} are based on the [fair-code](https://faircode.io/) model.
