@@ -21,6 +21,7 @@ There are different ways to set up n8n depending on how you intend to use it:
 
 --8<-- "_snippets/self-hosting/warning.md"
 
+A broken [link](https://grumgle.com/noway)
 
 ## Licenses
 
