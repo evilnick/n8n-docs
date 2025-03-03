@@ -8,7 +8,7 @@ jobs:
     steps:
       name: post
       uses: joelwmale/webhook-action@master
-        with:
+      with:
           url: ${{ secrets.WFADDRESS }}
           headers: '{"Authorization": "${{ secrets.WFAUTH }}" }'
           body: '{"event": "deployment", "repository": "joelwmale/webhook-action"}'
