@@ -1,7 +1,7 @@
 name: Lychee external linkcheck
 on:
   schedule:
-    - cron: "18 7 * * *"  
+    - cron: "58 7 * * MON"  
   workflow_dispatch: 
 jobs:
   link-check:
@@ -14,7 +14,18 @@ jobs:
         uses: lycheeverse/lychee-action@v1
         with:
           args: --config lychee.toml ./docs
-
+      - name: Read Lychee Output
+        id: read_output
+        run: |
+          OUTPUT=$(cat lychee/out.md | sed 's/"/\\"/g' | tr -d '\n')
+          echo "lychee_result=$LINK_OUTPUT" >> $GITHUB_ENV
+      - name: post2
+        uses: distributhor/workflow-webhook@v3
+        with:
+          webhook_url: ${{ secrets.WFADDRESS }}
+          webhook_auth_type: "header"
+          webhook_auth: "Authorization: ${{ secrets.WFAUTH }}"
+          data: '{ "link_check_results": "${{ env.lychee_result }}" }'
       - name: Report Status
         if: failure()
         run: echo "❌ Broken links detected. Please fix them!"
