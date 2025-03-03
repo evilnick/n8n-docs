@@ -1,0 +1,8 @@
+- name: Webhook:
+  workflow_dispatch: 
+  uses: joelwmale/webhook-action@master
+  with:
+    url: ${{ secrets.WFADDRESS }}
+    headers: '{"Authorization": "${{ secrets.WFAUTH }}" }'
+    body: '{"event": "deployment", "repository": "joelwmale/webhook-action"}'
+    github_event_payload: true
