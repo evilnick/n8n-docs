@@ -1,7 +1,7 @@
 name: Webhook
-  on:
-    workflow_dispatch: 
-  jobs:
+on:
+   workflow_dispatch: 
+jobs:
   link-check:
     runs-on: ubuntu-latest
 
